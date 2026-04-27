@@ -1,0 +1,129 @@
+.hero {
+  font-family: Onest, "Noto Sans Georgian", sans-serif;
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero .container {
+  height: 100%;
+}
+
+.hero__inner {
+  min-height: inherit;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(12px, 2vw, 18px);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero__image {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  user-select: none;
+  opacity: 0.78;
+}
+
+.hero__image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, rgba(11, 11, 11, 0.06) 0%, rgba(11, 11, 11, 0.24) 58%, rgba(11, 11, 11, 0.42) 100%);
+}
+
+.hero__image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+
+.hero__title {
+  position: relative;
+  z-index: 1;
+  font-weight: 700;
+  font-size: clamp(54px, 8vw, 100px);
+  line-height: 0.98;
+  text-transform: uppercase;
+  color: #fff;
+  text-align: center;
+}
+
+.hero__subtitle {
+  position: relative;
+  z-index: 1;
+  font-weight: 600;
+  font-size: clamp(18px, 2.2vw, 28px);
+  text-align: center;
+}
+
+.hero__title span {
+  color: #F44901;
+}
+
+.hero__buttons {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+@media (max-width: 760px) {
+  .hero {
+    min-height: clamp(420px, 68svh, 620px);
+    padding: 28px 0;
+  }
+
+  .hero__image {
+    opacity: 0.72;
+  }
+
+  .hero__buttons-btn {
+    flex: 1 1 160px;
+  }
+}
+
+@media (max-width: 560px) {
+  .hero {
+    min-height: 420px;
+    padding: 24px 0;
+  }
+
+  .hero__image {
+    opacity: 0.68;
+  }
+
+  .hero__image img {
+    object-position: 58% center;
+  }
+
+  .hero__title {
+    font-size: clamp(42px, 14vw, 58px);
+  }
+
+  .hero__subtitle {
+    font-size: 16px;
+  }
+
+  .hero__buttons {
+    gap: 12px;
+  }
+
+  .hero__buttons-btn {
+    flex: 1 1 100%;
+    max-width: 260px;
+  }
+}

@@ -1,0 +1,46 @@
+<header class="header" [class.header--open]="isMenuOpen">
+  <div class="header__inner">
+    <a class="header__logo" routerLink="/" [attr.aria-label]="i18n.t('brand.homeAria')" (click)="closeMenu()">
+      <img class="header__logo-image" src="/logos/primary-logo.png" alt="Meti Agency logo" width="100" height="34">
+    </a>
+
+    <div class="header__actions">
+      <nav id="main-navigation" class="header__nav" [attr.aria-label]="i18n.t('nav.label')">
+        <ul class="header__list">
+          <li>
+            <a routerLink="/" routerLinkActive="header__link--active" [routerLinkActiveOptions]="{ exact: true }" ariaCurrentWhenActive="page" (click)="closeMenu()">{{ i18n.t('nav.home') }}</a>
+          </li>
+          <li>
+            <a routerLink="/about" routerLinkActive="header__link--active" ariaCurrentWhenActive="page" (click)="closeMenu()">{{ i18n.t('nav.about') }}</a>
+          </li>
+          <li>
+            <a routerLink="/portfolio" routerLinkActive="header__link--active" ariaCurrentWhenActive="page" (click)="closeMenu()">{{ i18n.t('nav.portfolio') }}</a>
+          </li>
+          <li>
+            <a routerLink="/services" routerLinkActive="header__link--active" ariaCurrentWhenActive="page" (click)="closeMenu()">{{ i18n.t('nav.services') }}</a>
+          </li>
+          <li>
+            <a routerLink="/contact" routerLinkActive="header__link--active" ariaCurrentWhenActive="page" (click)="closeMenu()">{{ i18n.t('nav.contact') }}</a>
+          </li>
+        </ul>
+      </nav>
+
+      <button class="header__language" type="button" [attr.aria-label]="i18n.languageButtonAriaLabel()" (click)="toggleLanguage()">
+        {{ i18n.languageButtonLabel() }}
+      </button>
+    </div>
+
+    <button
+      class="header__burger"
+      type="button"
+      [attr.aria-label]="i18n.t('menu.toggle')"
+      [attr.aria-expanded]="isMenuOpen"
+      aria-controls="main-navigation"
+      (click)="toggleMenu()"
+    >
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </button>
+  </div>
+</header>

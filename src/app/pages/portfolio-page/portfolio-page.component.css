@@ -1,0 +1,114 @@
+.portfolio-page {
+  padding-top: clamp(96px, 12vw, 140px);
+  margin-bottom: clamp(80px, 12vw, 200px);
+  font-family: Onest, "Noto Sans Georgian", sans-serif;
+}
+
+.portfolio__title {
+  font-weight: normal;
+  font-size: clamp(34px, 5vw, 48px);
+  margin-bottom: 20px;
+}
+
+.portfolio__subtitle {
+  margin-bottom: 20px;
+}
+
+.portfolio__cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(24px, 4vw, 50px) clamp(20px, 3vw, 32px);
+  margin-top: clamp(36px, 5vw, 56px);
+}
+
+.portfolio__card-item {
+  min-height: clamp(320px, 40vw, 500px);
+  background-image: url('/xamsi.png');
+  background-position: center;
+  background-size: cover;
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio__card-item-image {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  width: 48px;
+  max-width: calc(100% - 40px);
+  height: 48px;
+  padding: 0 14px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #000;
+  font: 600 16px/1.2 Onest, "Noto Sans Georgian", sans-serif;
+  cursor: pointer;
+  overflow: hidden;
+  transition: width 220ms ease, background-color 220ms ease, border-color 220ms ease;
+}
+
+.portfolio__card-item-image img {
+  flex: 0 0 auto;
+  width: 20px;
+  transition: transform 220ms ease;
+}
+
+.portfolio__card-item-image span {
+  max-width: 0;
+  opacity: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  transform: translateX(8px);
+  transition: max-width 220ms ease, opacity 160ms ease, transform 220ms ease;
+}
+
+.portfolio__card-item-image:is(:hover, :focus-visible) {
+  width: 210px;
+  border-color: rgba(255, 255, 255, 0.4);
+  outline: none;
+}
+
+.portfolio__card-item-image:is(:hover, :focus-visible) span {
+  max-width: 150px;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.portfolio__card-item-image:is(:hover, :focus-visible) img {
+  transform: translate(2px, -2px);
+}
+
+@media (max-width: 900px) {
+  .portfolio__cards {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio__card-item {
+    min-height: 420px;
+  }
+}
+
+@media (max-width: 560px) {
+  .portfolio__card-item {
+    min-height: 320px;
+    border-radius: 14px;
+  }
+
+  .portfolio__card-item-image {
+    top: 14px;
+    right: 14px;
+    max-width: calc(100% - 28px);
+  }
+
+  .portfolio__card-item-image:is(:hover, :focus-visible) {
+    width: 190px;
+  }
+}

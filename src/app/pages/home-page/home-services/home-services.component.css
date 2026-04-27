@@ -1,0 +1,126 @@
+.services {
+  font-family: Onest, "Noto Sans Georgian", sans-serif;
+  margin-bottom: 80px;
+}
+
+.services__inner {
+  display: grid;
+  gap: clamp(28px, 4vw, 44px);
+}
+
+.services__header {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.services__title {
+  font-size: clamp(34px, 5vw, 56px);
+  font-weight: 800;
+  line-height: 1.05;
+}
+
+
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(14px, 2vw, 22px);
+}
+
+.services__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: clamp(240px, 24vw, 300px);
+  padding: clamp(18px, 2vw, 26px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  background: linear-gradient(135deg, #121212 0%, #232323 100%);
+  transition: background 220ms ease, border-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+}
+
+.services__card:hover,
+.services__card:focus-visible {
+  background: linear-gradient(135deg, #121212 0%, #F44901 100%);
+  border-color: rgba(244, 73, 1, 0.8);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 30px rgba(244, 73, 1, 0.18);
+}
+
+
+
+.services__card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.services__number {
+  color: #F44901;
+  font-size: clamp(36px, 5vw, 54px);
+  font-weight: 800;
+  line-height: 1;
+}
+
+.services__icon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.services__card:hover .services__number,
+.services__card:focus-visible .services__number {
+  color: #fff;
+}
+
+.services__card:hover .services__icon,
+.services__card:focus-visible .services__icon {
+  border-color: rgba(255, 255, 255, 0.28);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.services__icon img {
+  width: 18px;
+  height: 18px;
+}
+
+.services__card-title {
+  max-width: 260px;
+  font-size: clamp(20px, 2.2vw, 26px);
+  font-weight: 800;
+  line-height: 1.18;
+}
+
+.services__btn {
+  justify-self: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-width: 164px;
+}
+
+@media (max-width: 1040px) {
+  .services__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .services {
+    padding: 64px 0;
+  }
+
+  .services__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .services__card {
+    min-height: 220px;
+  }
+}

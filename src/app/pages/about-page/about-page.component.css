@@ -1,0 +1,35 @@
+.about {
+  padding-top: 140px;
+  font-family: Onest, "Noto Sans Georgian", sans-serif;
+}
+
+.about__title {
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.about__subtitle {
+  margin: 40px 0px
+}
+
+.about__image {
+  margin-bottom: 50px;
+}
+
+.about__image img {
+  width: 100%;
+  margin-bottom: 40px;
+  border-radius: 10px;
+}
+
+@media (max-width: 760px) {
+  .about {
+    padding-top: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about__title {
+    font-size: 33px;
+  }
+}

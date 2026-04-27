@@ -1,0 +1,113 @@
+.footer {
+  font-family: Onest, "Noto Sans Georgian", sans-serif;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(180deg, rgba(15, 15, 15, 0.94) 0%, rgba(10, 10, 10, 0.98) 100%);
+}
+
+.footer__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) minmax(0, 1.1fr);
+  gap: 28px;
+  align-items: start;
+  padding: clamp(28px, 4vw, 44px) 0 24px;
+}
+
+.footer__brand,
+.footer__contact {
+  display: grid;
+  gap: 10px;
+}
+
+.footer__eyebrow {
+  color: #F44901;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+.footer__text {
+  max-width: 280px;
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.55;
+}
+
+.footer__nav {
+  display: grid;
+  justify-content: center;
+  gap: 12px;
+}
+
+.footer__nav a,
+.footer__contact a,
+.footer__contact span {
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.5;
+}
+
+.footer__nav a,
+.footer__contact a {
+  transition: color 180ms ease;
+}
+
+.footer__nav a:hover,
+.footer__nav a:focus-visible,
+.footer__contact a:hover,
+.footer__contact a:focus-visible {
+  color: #F44901;
+}
+
+.footer__contact {
+  font-style: normal;
+  justify-items: end;
+  text-align: right;
+}
+
+.footer__contact a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer__copyright {
+  padding: 18px 0 28px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.54);
+  font-size: 13px;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .footer__inner {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .footer__nav {
+    justify-content: start;
+  }
+
+  .footer__contact {
+    grid-column: 1 / -1;
+    justify-items: start;
+    text-align: left;
+  }
+}
+
+@media (max-width: 560px) {
+  .footer__inner {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    padding-top: 28px;
+  }
+
+  .footer__nav,
+  .footer__contact {
+    justify-content: start;
+    justify-items: start;
+    text-align: left;
+  }
+
+  .footer__copyright {
+    padding-bottom: 24px;
+    text-align: left;
+  }
+}

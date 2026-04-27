@@ -1,0 +1,129 @@
+.relationships {
+  font-family: Onest, "Noto Sans Georgian", sans-serif;
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.relationships__title {
+  font-size: clamp(34px, 5vw, 56px);
+  font-weight: 700;
+  margin: 0 auto;
+}
+
+.relationships__cards {
+  --relationship-card-count: 4;
+  --relationship-node-size: 96px;
+  --relationship-line-offset: calc(100% / (var(--relationship-card-count) * 2));
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(18px, 2.4vw, 32px);
+  margin-top: clamp(32px, 4vw, 52px);
+  align-items: start;
+}
+
+.relationships__cards::before {
+  content: "";
+  position: absolute;
+  top: calc(var(--relationship-node-size) / 2);
+  left: var(--relationship-line-offset);
+  right: var(--relationship-line-offset);
+  height: 2px;
+  background-color: #F44901;
+  box-shadow: 0 1px 10px 2px rgba(244, 73, 1, 0.45);
+}
+
+.relationships__rocket {
+  position: absolute;
+  top: calc((var(--relationship-node-size) / 2) - 20px);
+  left: var(--relationship-line-offset);
+  width: calc(100% - (var(--relationship-line-offset) * 2));
+  height: 40px;
+  z-index: 1;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.relationships__rocket img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  display: block;
+  filter: drop-shadow(0 4px 10px rgba(244, 73, 1, 0.3));
+  animation: relationships-rocket-flight 5.5s linear infinite;
+}
+
+.relationships__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+
+.relationships__card-logo {
+  width: 96px;
+  height: 96px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #121212 0%, #202020 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.relationships__card-title {
+  font-size: clamp(20px, 2vw, 26px);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.relationships__card-subtitle {
+  max-width: 260px;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.5;
+}
+
+@keyframes relationships-rocket-flight {
+  from {
+    left: 0;
+    transform: rotate(-8deg);
+  }
+
+  to {
+    left: calc(100% - 40px);
+    transform: rotate(8deg);
+  }
+}
+
+@media (max-width: 980px) {
+  .relationships__cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .relationships__cards::before,
+  .relationships__rocket {
+    display: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .relationships {
+    padding: 64px 0;
+  }
+
+  .relationships__cards {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .relationships__cards::before,
+  .relationships__rocket {
+    display: none;
+  }
+}

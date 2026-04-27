@@ -1,1 +1,60 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Onest:wght@100..900&family=Noto+Sans+Georgian:wght@100..900&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=K2D&family=Onest:wght@100..900&family=Unbounded&display=swap'); */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: #fff;
+  background-color: #0b0b0b;
+  position: relative;
+  overflow-x: hidden;
+  font-family: Onest, "Noto Sans Georgian", sans-serif;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image: url('/background.png');
+  background-repeat: repeat;
+  background-position: top left;
+  opacity: .6;
+  pointer-events: none;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1270px;
+  padding: 0 15px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+.primary-btn {
+  font-family: Onest, "Noto Sans Georgian", sans-serif;
+  padding: 10px 20px;
+  font-weight: 500;
+  color: #fff;
+  background-color: transparent;
+  border: 1px solid #fff;
+  transition: .2s linear;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.primary-btn:hover {
+  background-color: #fff;
+  color: #000;
+}
