@@ -23,7 +23,7 @@
 
 .portfolio__card-item {
   min-height: clamp(320px, 40vw, 500px);
-  background-image: url('/xamsi.png');
+  background-image: url('/MetiFront/xamsi.png'), url('/xamsi.png');
   background-position: center;
   background-size: cover;
   border-radius: 16px;
